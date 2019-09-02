@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
+
 public class Vehicle {
     String name;
     double mileage;
@@ -23,6 +25,9 @@ public class Vehicle {
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel: " + fuelLevel);
 
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        System.out.println("Input from user:" + text);
         return distance;
     }
 }
