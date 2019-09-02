@@ -24,6 +24,10 @@ public class App {
         System.out.println(car.travelDistance);
         System.out.println(car.running);
 
+        System.out.println(car.engine);
+
+        car.accelerate(61, 1);
+
         Car car2 = new Car();
         car2.name = "Golf";
         car2.fuelLevel = 85;
