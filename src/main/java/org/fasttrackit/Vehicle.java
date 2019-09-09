@@ -19,7 +19,7 @@ public class Vehicle {
     }
 
     public double accelerate(double speed) {
-        return accelerate(speed, 1);
+        return accelerate( speed, 1);
     }
 
     public double accelerate(double speed, double durationInHours) {
@@ -101,4 +101,18 @@ public class Vehicle {
     public static int getTotalCount() {
         return totalCount;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", mileage=" + mileage +
+                ", maxSpeed=" + maxSpeed +
+                ", fuelType='" + fuelType + '\'' +
+                ", fuelLevel=" + fuelLevel +
+                ", traveledDistance=" + traveledDistance +
+                ", running=" + running +
+                '}';
+    }
 }
+
