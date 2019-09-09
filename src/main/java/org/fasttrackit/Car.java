@@ -6,5 +6,6 @@ public class Car extends AutoVehicle {
 
     public Car(Engine engine) {
         super(engine);
+        System.out.println("Creating a car");
     }
 }
