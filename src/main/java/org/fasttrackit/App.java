@@ -2,6 +2,12 @@ package org.fasttrackit;
 
 public class App {
     public static void main(String[] args) {
+        Game game = new Game();
+        game.start();
+
+
+
+
 
 //        Engine engine = new Engine();
 //        engine.manufacturer = "Renault";
@@ -55,18 +61,20 @@ public class App {
 //System.out.println("Total count in car after setting car2: " + car.totalCount);
 //System.out.println("Total count in car 2: " + car2.totalCount);
 //System.out.println("Total count in car class " + Car.totalCount);
-   Vehicle HybridCar = new HybridCar();
-    HybridCar.setName("Tesla");
-    HybridCar.setFuelLevel(60);
-    //method implementation from object's class not from variable's class
-    HybridCar.accelerate(60, 1);
-
-        System.out.println(HybridCar.getFuelLevel());
-        System.out.println(HybridCar.getTraveledDistance());
-    // variable type decides what methods can be invoked
-        // type casting
-        ((HybridCar) HybridCar).fly();
-
-    }
-
+//   Vehicle HybridCar = new HybridCar();
+//    HybridCar.setName("Tesla");
+//    HybridCar.setFuelLevel(60);
+//    //method implementation from object's class not from variable's class
+//    HybridCar.accelerate(60, 1);
+//
+//        System.out.println(HybridCar.getFuelLevel());
+//        System.out.println(HybridCar.getTraveledDistance());
+//    // variable type decides what methods can be invoked
+//        // type casting
+//        ((HybridCar) HybridCar).fly();
+//
+//    }
+//
+//
+ }
 }
