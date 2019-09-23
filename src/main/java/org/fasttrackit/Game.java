@@ -3,7 +3,9 @@ package org.fasttrackit;
 import javax.swing.plaf.basic.BasicSliderUI;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
@@ -20,7 +22,7 @@ public class Game {
     }
 
     private void initializeCompetitors() {
-        int competitorCount = 2;
+        int competitorCount = getCompetitorCountFromUser();
         System.out.println("Today competitors are: ");
         for (int i = 0; i < competitorCount; i++) {
             Vehicle competitor = new Vehicle();
@@ -31,6 +33,17 @@ public class Game {
             System.out.println(competitor);
 
             competitors.add(competitor);
+        }
+    }
+
+    private int getCompetitorCountFromUser() {
+        System.out.println("Please enter number of players.");
+        Scanner scanner = new Scanner(System.in);
+        try { return scanner.nextInt();
+        } catch (InputMismatchException e){
+            throw new RuntimeException(" You have enter an invalid number.");
+        }finally {
+            System.out.println("Finally block is always executed.");
         }
     }
 
