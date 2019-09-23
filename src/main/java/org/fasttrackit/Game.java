@@ -18,7 +18,26 @@ public class Game {
     public void start() throws Exception {
         initializeTracks();
         displayTracks();
+
+        Track selectedTrak = getSelectedTrackFromUser();
+
         initializeCompetitors();
+
+
+    }
+
+    private Track getSelectedTrackFromUser() {
+        System.out.println("Please select a track.");
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            int userChoice = scanner.nextInt();
+            return tracks[userChoice - 1];
+        } catch (InputMismatchException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("You have entered an invalid number.");
+            //recursion - a method calling itself1
+            return getSelectedTrackFromUser();
+        }
     }
 
     private void initializeCompetitors() throws Exception {
@@ -40,10 +59,11 @@ public class Game {
     private int getCompetitorCountFromUser() throws Exception {
         System.out.println("Please enter number of players.");
         Scanner scanner = new Scanner(System.in);
-        try { return scanner.nextInt();
-        } catch (InputMismatchException e){
+        try {
+            return scanner.nextInt();
+        } catch (InputMismatchException e) {
             throw new Exception(" You have enter an invalid number.");
-        }finally {
+        } finally {
             System.out.println("Finally block is always executed.");
         }
     }
