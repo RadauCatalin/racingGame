@@ -22,8 +22,21 @@ public class Game {
         Track selectedTrak = getSelectedTrackFromUser();
 
         initializeCompetitors();
+        // for-each or enhanced for loop
+        for (Vehicle vehicle : competitors){
+            double speed = getAccelerateSpeedFromUser();
+            vehicle.accelerate(speed, 1);
+        }
 
-
+    }
+    private double getAccelerateSpeedFromUser(){
+        System.out.println("Please enter acceleration speed");
+        Scanner scanner = new Scanner(System.in);
+        try{
+        return scanner.nextDouble();
+    }catch (InputMismatchException e){
+            System.out.println("you have entered an invalid number.");
+       return getAccelerateSpeedFromUser();}
     }
 
     private Track getSelectedTrackFromUser() {
